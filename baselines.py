@@ -1,5 +1,4 @@
-# Author: Rob Zinkov <rob at zinkov dot com>
-# License: BSD 3 clause
+
 import trapezoidalAlgorithm as trapez
 import numpy as np
 import matplotlib.pyplot as plt
