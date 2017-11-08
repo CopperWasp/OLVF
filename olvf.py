@@ -7,7 +7,7 @@ import copy
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import time
-import miscMethods as misc
+import miscMethods
 import olsf as sf
 
 phi = 2
@@ -205,7 +205,7 @@ def olsf_online(data, dataset_name, shuffle_var):
     plt.show()
     
     feature_summary=[np.count_nonzero(row) for row in X]
-    misc.plot_features(feature_summary, "")
+    miscMethods.plot_features(feature_summary, "")
     
 
 def olsf_stream(data, dataset_name):
@@ -234,7 +234,7 @@ def olsf_stream(data, dataset_name):
     plt.grid()
     plt.show()
     feature_summary=[np.count_nonzero(row) for row in X]
-    misc.plot_features(feature_summary, "")
+    miscMethods.plot_features(feature_summary, "")
 
 
 def experiment_uci_stream():

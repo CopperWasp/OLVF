@@ -78,7 +78,10 @@ def experiment_uci_stream():
     # olsf_stream(preprocess2.readWdbcNormalized(), "WDBC")
     # olsf_stream(preprocess2.readWpbcNormalized(), "WPBC")
     # olsf_stream(preprocess2.readA8ANormalized(), "A8A")
-    #olsf_stream(preprocess2.read_svmguide3(), "svmguide3")
+    # olsf_stream(preprocess2.read_svmguide3(), "svmguide3")
 
 
 experiment_uci_stream()
+
+
+# def trapezoidal_stream_experiment(data, dataset_name):
