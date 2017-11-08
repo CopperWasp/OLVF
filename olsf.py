@@ -10,7 +10,8 @@ import copy
 class OLSF:
     def __init__(self, mode):
         self.weights = []
-
+        self.X = []
+        self.y = []
         self.C = 0.1
         self.Lambda = 30
         self.B = 0.64
@@ -19,7 +20,6 @@ class OLSF:
         self.mode = mode
         if mode == 'stream':
             self.rounds = 1
-
 
     def initialize(self, data, labels):
         self.X = data
@@ -111,10 +111,10 @@ def preprocess_data(data, mode='variable'):
     if 0 not in row.keys(): start = 1
     if 0 in row.keys(): start = 0
     for row in dataset:
-        X_row = []
+        x_row = []
         for i in range(start, len(row)):
-            X_row.append(row[i])
-        X.append(X_row)
+            x_row.append(row[i])
+        X.append(x_row)
     return X, y
 
 

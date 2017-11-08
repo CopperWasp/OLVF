@@ -65,7 +65,7 @@ def experiment_stream(data, dataset_name):
     plt.show()
 
     feature_summary = [np.count_nonzero(row) for row in X]
-    miscMethods.plotFeatures(feature_summary, "")
+    miscMethods.plot_features(feature_summary, "")
 
 
 def experiment_uci_stream():

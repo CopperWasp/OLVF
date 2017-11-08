@@ -205,7 +205,7 @@ def olsf_online(data, dataset_name, shuffle_var):
     plt.show()
     
     feature_summary=[np.count_nonzero(row) for row in X]
-    misc.plotFeatures(feature_summary, "")
+    misc.plot_features(feature_summary, "")
     
 
 def olsf_stream(data, dataset_name):
@@ -234,7 +234,7 @@ def olsf_stream(data, dataset_name):
     plt.grid()
     plt.show()
     feature_summary=[np.count_nonzero(row) for row in X]
-    misc.plotFeatures(feature_summary, "")
+    misc.plot_features(feature_summary, "")
 
 
 def experiment_uci_stream():

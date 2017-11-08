@@ -7,23 +7,23 @@ import time
 random.seed(parameters.seed)
 
 
-def findCommonKeys(classifier, row):  # find the common keys of two dictionaries
+def find_common_keys(classifier, row):  # find the common keys of two dictionaries
     return set(classifier.keys()) & set(row.keys())
 
 
-def findDifferentKeys(dict1, dict2):
+def find_different_keys(dict1, dict2):
     return set(dict1.keys())-set(dict2.keys())
 
 
-def subsetDictionary(dictionary, intersection):  # extract subset of key-val pairs if in
+def subset_dictionary(dictionary, intersection):  # extract subset of key-val pairs if in
     return dict((value, dictionary[value]) for value in intersection)
 
 
-def dictToNumpyArray(dictionary):
+def dict_to_numpy_array(dictionary):
     return np.array(list(dictionary.values()))
 
 
-def dictToUnitNumpyMatrix(dictionary):
+def dict_to_unit_numpy_matrix(dictionary):
     matrix = np.identity(len(dictionary))
     values = list(dictionary.values())
     for i in range(0, len(dictionary)):
@@ -42,15 +42,15 @@ def dot(value_list):
     return return_value
 
 
-def numpyArrayToDict(numpy_array, labels):
+def numpy_array_to_dict(numpy_array, labels):
     return dict((labels[i], numpy_array[i]) for i in range(0, len(labels)))
 
 
-def numpyMatrixToDict(numpy_matrix, labels):
+def numpy_matrix_to_dict(numpy_matrix, labels):
     return dict((labels[i], numpy_matrix[i][i]) for i in range(0, len(labels)))
 
 
-def generateTrainingTest(dataset, training_test_ratio):
+def generate_training_test(dataset, training_test_ratio):
         random.shuffle(dataset)
         training_length = int(len(dataset)*training_test_ratio)
         test_dataset = dataset[:training_length]
@@ -58,7 +58,7 @@ def generateTrainingTest(dataset, training_test_ratio):
         return training_dataset, test_dataset
 
 
-def generateTrainingTestTrapezoidal(dataset, heldout):  # dont shuffle for the order
+def generate_training_test_trapezoidal(dataset, heldout):  # dont shuffle for the order
         training_test_ratio = 1-heldout
         training_length = int(len(dataset)*training_test_ratio)
         test_dataset = dataset[training_length:]
@@ -67,7 +67,7 @@ def generateTrainingTestTrapezoidal(dataset, heldout):  # dont shuffle for the o
 
 
 # Plotting Methods
-def plotError(error_vector, dataset_name):
+def plot_error(error_vector, dataset_name):
     # xx = 1. - np.array(parameters.heldout) #heldouts
     xx = list(range(len(error_vector)-1))
     yy = (np.array(error_vector[1:])*100)
@@ -81,7 +81,7 @@ def plotError(error_vector, dataset_name):
     plt.clf()
 
 
-def plotFeatures(feature_summary, dataset_name):
+def plot_features(feature_summary, dataset_name):
     xx = np.array(range(0, len(feature_summary)))
     yy = np.array(feature_summary)
     plt.plot(xx, yy, label=dataset_name, marker='o', linestyle='--')
@@ -94,7 +94,7 @@ def plotFeatures(feature_summary, dataset_name):
     plt.clf()
 
 
-def plotClassifierDimension(classifier_summary, dataset_name):
+def plot_classifier_dimension(classifier_summary, dataset_name):
     xx = np.array(range(0, len(classifier_summary)))
     yy = np.array(classifier_summary)
     plt.plot(xx, yy, label=dataset_name+", B: "+str(parameters.sparsity_B))
