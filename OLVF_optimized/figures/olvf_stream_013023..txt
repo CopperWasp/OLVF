@@ -1,0 +1,14 @@
+SHARED - folds = 20
+SHARED - seed = 20
+
+OLVF - phi = 0.2
+OLVF - C = 0.1
+OLVF - B = 0.75
+OLVF - Lambda = 30
+OLVF - Option = 0
+OLVF - StreamMode = variable
+
+OLSF - C = 0.1
+OLSF - B = 0.08
+OLSF - Lambda = 30
+OLSF - Option = 1
